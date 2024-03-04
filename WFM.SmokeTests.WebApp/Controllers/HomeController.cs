@@ -18,6 +18,13 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult TestPlans()
+    {
+        var mockViewModel = new TestPlansViewModel()
+            { Header = "Test plans list", TestPlansList = new List<string>(){ "Smoke tests Admin Panel", "Smoke tests quick" } };
+        return View(mockViewModel);
+    }
+
     public IActionResult Privacy()
     {
         return View();

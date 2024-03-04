@@ -1,0 +1,12 @@
+@model TestPlansViewModel
+@{
+    ViewData["Title"] = "Test plans list ";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Header</h1>
+    @foreach (var testPlanName in @Model.TestPlansList)
+    {
+        <p>@testPlanName <a href="https://learn.microsoft.com/aspnet/core">View</a>.</p>
+    }
+</div>
