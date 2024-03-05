@@ -4,5 +4,7 @@ public class TestPlansViewModel
 {
     public string Header { get; set; }
     
-    public List<string> TestPlansList { get; set;}
+    public List<TestPlanInfo> TestPlansList { get; set;}
 }
+
+public record TestPlanInfo(int PlanId, string PlanName);
