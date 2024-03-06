@@ -1,0 +1,18 @@
+@model TestPlanViewModel
+
+@{
+    ViewBag.Title = @Model.PlanCaption;
+    Layout = "_Layout";
+}
+
+
+<h2>@Model.PlanCaption</h2>
+<span>@Model.PlanDescription</span>
+<span>Steps to execute</span>
+<ul>
+    @foreach (var testStep in @Model.PlanSteps)
+    {
+        <li>@testStep</li>
+    }
+</ul>
+
