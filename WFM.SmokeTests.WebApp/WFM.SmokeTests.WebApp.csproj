@@ -11,4 +11,8 @@
       <Folder Include="Pages\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\WFM.SmokeTests.Application\WFM.SmokeTests.Application.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\WFM.SmokeTests.Domain\WFM.SmokeTests.Domain.csproj" />
+      <ProjectReference Include="..\WFM.SmokeTests.Infrastructure\WFM.SmokeTests.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
