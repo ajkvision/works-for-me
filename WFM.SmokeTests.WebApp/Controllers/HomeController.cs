@@ -1,5 +1,9 @@
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Text;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using WFM.SmokeTests.App.Models;
 
 namespace WFM.SmokeTests.App.Controllers;
@@ -24,6 +28,8 @@ public class HomeController : Controller
             { Header = "Test plans list", TestPlansList = new List<TestPlanInfo>(){new TestPlanInfo(1, "Smoke tests Admin Panel"),new TestPlanInfo(2, "Smoke tests quick") }};
         return View(mockViewModel);
     }
+    
+    
 
     private TestPlanViewModel getTestPlanData(int planId)
     {
@@ -43,6 +49,15 @@ public class HomeController : Controller
     {
         var mockViewModel = getTestPlanData(id);
         return View(mockViewModel);
+    }
+
+    public IActionResult DownloadPlanDetail(int id)
+    {
+        var stream = new MemoryStream(Encoding.ASCII.GetBytes("Test case scenario"));
+        return new FileStreamResult(stream, new MediaTypeHeaderValue("text/json"))
+        {
+            FileDownloadName = "test.txt"
+        };        
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
