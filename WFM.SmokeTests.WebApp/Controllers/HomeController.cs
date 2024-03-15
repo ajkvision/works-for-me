@@ -53,10 +53,13 @@ public class HomeController : Controller
 
     public IActionResult DownloadPlanDetail(int id)
     {
-        var stream = new MemoryStream(Encoding.ASCII.GetBytes("Test case scenario"));
+        var mockViewModel = getTestPlanData(id);
+        var jsonContent = JsonSerializer.Serialize(mockViewModel);
+        
+        var stream = new MemoryStream(Encoding.ASCII.GetBytes(jsonContent));
         return new FileStreamResult(stream, new MediaTypeHeaderValue("text/json"))
         {
-            FileDownloadName = "test.txt"
+            FileDownloadName = "test.json"
         };        
     }
 
