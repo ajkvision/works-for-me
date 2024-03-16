@@ -55,11 +55,13 @@ public class HomeController : Controller
     {
         var mockViewModel = getTestPlanData(id);
         var jsonContent = JsonSerializer.Serialize(mockViewModel);
+
+        var fileName = $"TestPlan_{mockViewModel.PlanId.ToString("000")}_d{DateTime.Now.ToString("yyyymmdd")}.json";
         
         var stream = new MemoryStream(Encoding.ASCII.GetBytes(jsonContent));
         return new FileStreamResult(stream, new MediaTypeHeaderValue("text/json"))
         {
-            FileDownloadName = "test.json"
+            FileDownloadName = fileName
         };        
     }
 
