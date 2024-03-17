@@ -51,7 +51,7 @@ public class HomeController : Controller
         return View(mockViewModel);
     }
 
-    public IActionResult DownloadPlanDetail(int id)
+    public IActionResult DownloadPlanDetailJson(int id)
     {
         var mockViewModel = getTestPlanData(id);
         var jsonContent = JsonSerializer.Serialize(mockViewModel);
@@ -64,6 +64,28 @@ public class HomeController : Controller
             FileDownloadName = fileName
         };        
     }
+    
+    public IActionResult DownloadPlanDetailText(int id)
+    {
+        var mockViewModel = getTestPlanData(id);
+        var textContent = new StringBuilder();
+        textContent.AppendLine($"Test scenario -> {mockViewModel.PlanCaption}");
+        textContent.AppendLine($"Test description -> {mockViewModel.PlanDescription}");
+        textContent.AppendLine($"See test steps below: ");
+        foreach (var planStep in mockViewModel.PlanSteps)
+        {
+            textContent.AppendLine($"-> {planStep}");
+        }
+
+        var fileName = $"TestPlan_{mockViewModel.PlanId.ToString("000")}_d{DateTime.Now.ToString("yyyymmdd")}.txt";
+        
+        var stream = new MemoryStream(Encoding.ASCII.GetBytes(textContent.ToString()));
+        return new FileStreamResult(stream, new MediaTypeHeaderValue("text/plain"))
+        {
+            FileDownloadName = fileName
+        };        
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
