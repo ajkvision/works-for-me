@@ -77,6 +77,9 @@ public class HomeController : Controller
             textContent.AppendLine($"-> {planStep}");
         }
 
+        textContent.AppendLine("-------------");
+        textContent.AppendLine($"Test plan id:{mockViewModel.PlanId},  Generated at:{DateTime.Now.ToString("yyyymmdd")} ");
+
         var fileName = $"TestPlan_{mockViewModel.PlanId.ToString("000")}_d{DateTime.Now.ToString("yyyymmdd")}.txt";
         
         var stream = new MemoryStream(Encoding.ASCII.GetBytes(textContent.ToString()));
