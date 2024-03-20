@@ -58,7 +58,7 @@ public class HomeController : Controller
 
         var fileName = $"TestPlan_{mockViewModel.PlanId.ToString("000")}_d{DateTime.Now.ToString("yyyymmdd")}.json";
         
-        var stream = new MemoryStream(Encoding.ASCII.GetBytes(jsonContent));
+        var stream = new MemoryStream(Encoding.Unicode.GetBytes(jsonContent));
         return new FileStreamResult(stream, new MediaTypeHeaderValue("text/json"))
         {
             FileDownloadName = fileName
@@ -82,7 +82,7 @@ public class HomeController : Controller
 
         var fileName = $"TestPlan_{mockViewModel.PlanId.ToString("000")}_d{DateTime.Now.ToString("yyyymmdd")}.txt";
         
-        var stream = new MemoryStream(Encoding.ASCII.GetBytes(textContent.ToString()));
+        var stream = new MemoryStream(Encoding.Unicode.GetBytes(textContent.ToString()));
         return new FileStreamResult(stream, new MediaTypeHeaderValue("text/plain"))
         {
             FileDownloadName = fileName
