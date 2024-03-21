@@ -50,6 +50,20 @@ public class HomeController : Controller
         var mockViewModel = getTestPlanData(id);
         return View(mockViewModel);
     }
+    
+    public IActionResult CopyTestPlan(int id)
+    {
+        var mockViewModel = getTestPlanData(id);
+        return RedirectToAction("TestPlans");
+    }
+
+    
+    public IActionResult DeletePlan(int id)
+    {
+        var mockViewModel = getTestPlanData(id);
+        return RedirectToAction("TestPlans");
+    }
+
 
     public IActionResult DownloadPlanDetailJson(int id)
     {
