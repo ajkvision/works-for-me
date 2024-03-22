@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
+using WFM.SmokeTests.App.Helpers;
 using WFM.SmokeTests.App.Models;
 
 namespace WFM.SmokeTests.App.Controllers;
@@ -28,46 +29,31 @@ public class HomeController : Controller
             { Header = "Test plans list", TestPlansList = new List<TestPlanInfo>(){new TestPlanInfo(1, "Smoke tests Admin Panel"),new TestPlanInfo(2, "Smoke tests quick") }};
         return View(mockViewModel);
     }
-    
-    
 
-    private TestPlanViewModel getTestPlanData(int planId)
-    {
-        var mockViewModel = new TestPlanViewModel();
-        mockViewModel.PlanCaption = "My website smoke tests";
-        mockViewModel.PlanDescription = "This test plan checks basic func. on forntend";
-        mockViewModel.PlanId = 1;
-        mockViewModel.PlanSteps = new List<string>()
-        {
-            "Open home page, check image rendering",
-            "Check attachemnets",
-            "Check chart rendering"
-        };
-        return mockViewModel;
-    }
+
     public IActionResult PlanDetail(int id)
     {
-        var mockViewModel = getTestPlanData(id);
+        var mockViewModel = MockDataHelper.GetTestPlanData(id);
         return View(mockViewModel);
     }
     
     public IActionResult CopyTestPlan(int id)
     {
-        var mockViewModel = getTestPlanData(id);
+        var mockViewModel = MockDataHelper.GetTestPlanData(id);
         return RedirectToAction("TestPlans");
     }
 
     
     public IActionResult DeletePlan(int id)
     {
-        var mockViewModel = getTestPlanData(id);
+        var mockViewModel = MockDataHelper.GetTestPlanData(id);
         return RedirectToAction("TestPlans");
     }
 
 
     public IActionResult DownloadPlanDetailJson(int id)
     {
-        var mockViewModel = getTestPlanData(id);
+        var mockViewModel = MockDataHelper.GetTestPlanData(id);
         var jsonContent = JsonSerializer.Serialize(mockViewModel);
 
         var fileName = $"TestPlan_{mockViewModel.PlanId.ToString("000")}_d{DateTime.Now.ToString("yyyymmdd")}.json";
@@ -81,7 +67,7 @@ public class HomeController : Controller
     
     public IActionResult DownloadPlanDetailText(int id)
     {
-        var mockViewModel = getTestPlanData(id);
+        var mockViewModel = MockDataHelper.GetTestPlanData(id);
         var textContent = new StringBuilder();
         textContent.AppendLine($"Test scenario -> {mockViewModel.PlanCaption}");
         textContent.AppendLine($"Test description -> {mockViewModel.PlanDescription}");
