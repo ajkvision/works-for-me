@@ -24,3 +24,13 @@ test('at least one details link', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'View' }).first()).toBeVisible();
   
 });
+
+test('should be possible navigate to details', async ({ page }) => {
+  await page.goto('http://localhost:5265/Home/TestPlans/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'View' }).first().click();
+
+  await expect(page.getByRole('link', { name: 'Download as json' }).first()).toBeVisible();
+  
+});
