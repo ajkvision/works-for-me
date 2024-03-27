@@ -43,7 +43,23 @@ test('should have downloads links', async ({ page }) => {
 
   await expect(page.getByRole('link', { name: 'Download as json' }).first()).toBeVisible();
 
-  await expect(page.getByRole('link', { name: 'Download as test file' }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Download as text file' }).first()).toBeVisible();
   
 });
 
+test('verify text file downloads', async ({ page }) => {
+  await page.goto('http://localhost:5265/Home/TestPlans/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'View' }).first().click();
+
+  const downloadPromise = page.waitForEvent('download');
+
+  await page.getByRole('link', { name: 'Download as text file' }).first().click();
+  
+  const download = await downloadPromise;
+
+  // Wait for the download process to complete and save the downloaded file somewhere.
+  await download.saveAs(download.suggestedFilename());
+
+});
