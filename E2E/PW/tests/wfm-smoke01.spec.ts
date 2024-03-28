@@ -63,3 +63,19 @@ test('verify text file downloads', async ({ page }) => {
   await download.saveAs(download.suggestedFilename());
 
 });
+
+
+
+test('shoud  have back button', async ({ page }) => {
+  await page.goto('http://localhost:5265/Home/TestPlans/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'View' }).first().click();
+
+  await expect(page.getByRole('link', { name: 'Back' })).toBeVisible();
+
+});
+
+
+
+
