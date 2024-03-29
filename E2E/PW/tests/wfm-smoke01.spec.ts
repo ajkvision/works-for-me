@@ -35,6 +35,20 @@ test('should be possible navigate to details', async ({ page }) => {
   
 });
 
+
+test('view copy and delete links shoidl be visible', async ({ page }) => {
+  await page.goto('http://localhost:5265/Home/TestPlans/');
+
+  // Click the get started link.
+  await expect(page.getByRole('link', { name: 'View' }).first()).toBeVisible();
+
+  await expect(page.getByRole('link', { name: 'Copy' }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Delete' }).first()).toBeVisible();
+});
+
+
+
+
 test('should have downloads links', async ({ page }) => {
   await page.goto('http://localhost:5265/Home/TestPlans/');
 
