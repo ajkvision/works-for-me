@@ -46,6 +46,15 @@ test('view copy and delete links shoidl be visible', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Delete' }).first()).toBeVisible();
 });
 
+test('home and test plans shoidl be visible', async ({ page }) => {
+  await page.goto('http://localhost:5265/Home/TestPlans/');
+
+  // Click the get started link.
+  await expect(page.getByRole('link', { name: 'Home' }).first()).toBeVisible();
+
+  await expect(page.getByRole('link', { name: 'Test plans' }).first()).toBeVisible();
+});
+
 
 
 
