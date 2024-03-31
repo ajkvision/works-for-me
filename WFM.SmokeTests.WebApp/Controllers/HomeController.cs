@@ -25,12 +25,11 @@ public class HomeController : Controller
 
     public IActionResult TestPlans()
     {
-        var mockViewModel = new TestPlansViewModel()
-            { Header = "Test plans list", TestPlansList = new List<TestPlanInfo>(){new TestPlanInfo(1, "Smoke tests Admin Panel"),new TestPlanInfo(2, "Smoke tests quick") }};
+        var mockViewModel = MockDataHelper.GetTestPlansList();
         return View(mockViewModel);
     }
 
-
+    
     public IActionResult PlanDetail(int id)
     {
         var mockViewModel = MockDataHelper.GetTestPlanData(id);
