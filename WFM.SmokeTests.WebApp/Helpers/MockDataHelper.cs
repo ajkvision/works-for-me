@@ -4,16 +4,43 @@ namespace WFM.SmokeTests.App.Helpers;
 
 public static class MockDataHelper
 {
+    private static List<TestPlanViewModel> testPlansMockData;
 
-    List<
-    public static MockDataHelper()
+    
+    static MockDataHelper()
     {
         InitMockData();
     }
 
     private static void InitMockData()
     {
-        throw new NotImplementedException();
+        testPlansMockData = new List<TestPlanViewModel>();
+        
+        var mockViewModel = new TestPlanViewModel();
+        mockViewModel.PlanCaption = "My website smoke tests";
+        mockViewModel.PlanDescription = "This test plan checks basic func. on forntend";
+        mockViewModel.PlanId = 1;
+        mockViewModel.PlanSteps = new List<string>()
+        {
+            "Open home page, check image rendering",
+            "Check attachemnets",
+            "Check chart rendering"
+        };
+        
+        testPlansMockData.Add(mockViewModel);
+        
+        mockViewModel = new TestPlanViewModel();
+        mockViewModel.PlanCaption = "My website smoke tests";
+        mockViewModel.PlanDescription = "This test plan checks basic func. on forntend";
+        mockViewModel.PlanId = 2;
+        mockViewModel.PlanSteps = new List<string>()
+        {
+            "Open home page, check image rendering",
+            "Check attachemnets",
+            "Check chart rendering"
+        };
+        
+        testPlansMockData.Add(mockViewModel);
     }
 
     public static TestPlansViewModel GetTestPlansList()
@@ -25,16 +52,6 @@ public static class MockDataHelper
 
     public static TestPlanViewModel GetTestPlanData(int planId)
     {
-        var mockViewModel = new TestPlanViewModel();
-        mockViewModel.PlanCaption = "My website smoke tests";
-        mockViewModel.PlanDescription = "This test plan checks basic func. on forntend";
-        mockViewModel.PlanId = 1;
-        mockViewModel.PlanSteps = new List<string>()
-        {
-            "Open home page, check image rendering",
-            "Check attachemnets",
-            "Check chart rendering"
-        };
-        return mockViewModel;
+        return testPlansMockData.First(testPlan => testPlan.PlanId == planId);
     }
 }
