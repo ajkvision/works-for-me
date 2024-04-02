@@ -45,7 +45,7 @@ public class HomeController : Controller
     
     public IActionResult DeletePlan(int id)
     {
-        var mockViewModel = MockDataHelper.GetTestPlanData(id);
+        MockDataHelper.DelteTestPlan(id);
         return RedirectToAction("TestPlans");
     }
 

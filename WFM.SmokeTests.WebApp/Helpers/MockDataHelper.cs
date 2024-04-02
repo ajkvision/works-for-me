@@ -30,14 +30,14 @@ public static class MockDataHelper
         testPlansMockData.Add(mockViewModel);
         
         mockViewModel = new TestPlanViewModel();
-        mockViewModel.PlanCaption = "My website smoke tests";
-        mockViewModel.PlanDescription = "This test plan checks basic func. on forntend";
+        mockViewModel.PlanCaption = "Admin panel smoke tests";
+        mockViewModel.PlanDescription = "This test plan checks basic func. of admin panel";
         mockViewModel.PlanId = 2;
         mockViewModel.PlanSteps = new List<string>()
         {
-            "Open home page, check image rendering",
-            "Check attachemnets",
-            "Check chart rendering"
+            "Open home page, login as admin",
+            "Check menu, settings options should be visible",
+            "Try edit item"
         };
         
         testPlansMockData.Add(mockViewModel);
@@ -45,13 +45,26 @@ public static class MockDataHelper
 
     public static TestPlansViewModel GetTestPlansList()
     {
+        var testPlansList = new List<TestPlanInfo>();
+        if (testPlansMockData.Any())
+        {
+            testPlansMockData.ForEach(
+                tp => testPlansList.Add(new TestPlanInfo(tp.PlanId, tp.PlanCaption))
+                );
+        }
+        
         var mockViewModel = new TestPlansViewModel()
-            { Header = "Test plans list", TestPlansList = new List<TestPlanInfo>(){new TestPlanInfo(1, "Smoke tests Admin Panel"),new TestPlanInfo(2, "Smoke tests quick") }};
+            { Header = "Test plans list", TestPlansList = testPlansList};
         return mockViewModel;
     }
 
     public static TestPlanViewModel GetTestPlanData(int planId)
     {
         return testPlansMockData.First(testPlan => testPlan.PlanId == planId);
+    }
+    
+    public static void DelteTestPlan(int planId)
+    {
+        testPlansMockData.RemoveAll(testPlan => testPlan.PlanId == planId);
     }
 }
