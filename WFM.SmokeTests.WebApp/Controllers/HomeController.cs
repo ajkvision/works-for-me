@@ -38,7 +38,7 @@ public class HomeController : Controller
     
     public IActionResult CopyTestPlan(int id)
     {
-        var mockViewModel = MockDataHelper.GetTestPlanData(id);
+        MockDataHelper.CopyTestPlan(id);
         return RedirectToAction("TestPlans");
     }
 

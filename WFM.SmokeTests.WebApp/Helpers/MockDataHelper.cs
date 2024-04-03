@@ -67,4 +67,17 @@ public static class MockDataHelper
     {
         testPlansMockData.RemoveAll(testPlan => testPlan.PlanId == planId);
     }
+    
+    public static void CopyTestPlan(int planId)
+    {
+        var testPlan = testPlansMockData.First(testPlan => testPlan.PlanId == planId);
+        var newtestPlan = new TestPlanViewModel();
+        newtestPlan.PlanDescription = testPlan.PlanDescription;
+        newtestPlan.PlanCaption = testPlan.PlanCaption;
+        newtestPlan.PlanId = testPlansMockData.Max(tp => tp.PlanId) + 1;
+        newtestPlan.PlanSteps = new List<string>();
+        testPlan.PlanSteps.ForEach(ps => newtestPlan.PlanSteps.Add(ps));
+        
+        testPlansMockData.Add(newtestPlan);
+    }
 }
