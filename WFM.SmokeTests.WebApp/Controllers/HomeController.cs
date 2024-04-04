@@ -36,6 +36,12 @@ public class HomeController : Controller
         return View(mockViewModel);
     }
     
+    public IActionResult TestPlanExcecution(int id)
+    {
+        var mockViewModel = MockDataHelper.GetTestPlanData(id);
+        return View(mockViewModel);
+    }
+    
     public IActionResult CopyTestPlan(int id)
     {
         MockDataHelper.CopyTestPlan(id);
