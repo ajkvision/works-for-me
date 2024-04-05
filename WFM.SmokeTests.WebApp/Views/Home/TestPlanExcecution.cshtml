@@ -1,4 +1,4 @@
-@model TestPlanViewModel
+@model TestPlanExecutionViewModel
 
 @{
     ViewBag.Title = @Model.PlanCaption;
@@ -10,9 +10,16 @@
 <span>@Model.PlanDescription</span>
 <span>Steps to execute</span>
 <ul>
-    @foreach (var testStep in @Model.PlanSteps)
+    @for (int i=0; i <  @Model.PlanStepsResults.Count; i++)
     {
-        <li>@testStep</li>
+        <li>
+            
+                             <input type="checkbox" asp-for="@Model.PlanStepsResults[i].TestPassed"  />
+                             <label asp-for="@Model.PlanStepsResults[i].TestPassed">@Model.PlanStepsResults[i].StepName</label>
+                             
+                             <input type="hidden" asp-for="@Model.PlanStepsResults[i].StepName" />                
+                         
+        </li>
     }
 </ul>
 <a asp-action="DownloadPlanDetailJson" asp-route-id="@Model.PlanId" >Download as json</a>.

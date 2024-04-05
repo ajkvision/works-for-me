@@ -63,6 +63,20 @@ public static class MockDataHelper
         return testPlansMockData.First(testPlan => testPlan.PlanId == planId);
     }
     
+    
+    public static TestPlanExecutionViewModel GetTestPlanExecutionData(int planId)
+    {
+        var testPlanExecution =  testPlansMockData.First(testPlan => testPlan.PlanId == planId);
+        var result = new TestPlanExecutionViewModel();
+        result.PlanCaption = testPlanExecution.PlanCaption;
+        result.PlanDescription = testPlanExecution.PlanDescription;
+        result.PlanId = testPlanExecution.PlanId;
+        result.PlanStepsResults = new List<PlanSetpResult>();
+        testPlanExecution.PlanSteps.ForEach(s =>
+            result.PlanStepsResults.Add(new PlanSetpResult() { StepName = s, TestPassed = false }));
+
+        return result;
+    }
     public static void DelteTestPlan(int planId)
     {
         testPlansMockData.RemoveAll(testPlan => testPlan.PlanId == planId);

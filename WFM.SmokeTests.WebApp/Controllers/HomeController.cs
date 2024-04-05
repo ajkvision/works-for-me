@@ -38,7 +38,7 @@ public class HomeController : Controller
     
     public IActionResult TestPlanExcecution(int id)
     {
-        var mockViewModel = MockDataHelper.GetTestPlanData(id);
+        var mockViewModel = MockDataHelper.GetTestPlanExecutionData(id);
         return View(mockViewModel);
     }
     
