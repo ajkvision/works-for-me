@@ -42,6 +42,12 @@ public class HomeController : Controller
         return View(mockViewModel);
     }
     
+   [HttpPost]
+    public IActionResult SavePlanExcecution(int id)
+    {
+        return RedirectToAction("TestPlans");
+    }
+    
     public IActionResult CopyTestPlan(int id)
     {
         MockDataHelper.CopyTestPlan(id);

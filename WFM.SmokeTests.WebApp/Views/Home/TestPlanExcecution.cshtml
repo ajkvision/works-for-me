@@ -9,19 +9,23 @@
 <h2>@Model.PlanCaption</h2>
 <span>@Model.PlanDescription</span>
 <span>Steps to execute</span>
-<ul>
-    @for (int i=0; i <  @Model.PlanStepsResults.Count; i++)
-    {
-        <li>
+
+<form asp-action="SavePlanExcecution" asp-route-id="@Model.PlanId" method="post">
+    <ul>
+        @for (int i=0; i <  @Model.PlanStepsResults.Count; i++)
+        {
+            <li>
             
-                             <input type="checkbox" asp-for="@Model.PlanStepsResults[i].TestPassed"  />
-                             <label asp-for="@Model.PlanStepsResults[i].TestPassed">@Model.PlanStepsResults[i].StepName</label>
+                <input type="checkbox" asp-for="@Model.PlanStepsResults[i].TestPassed"  />
+                <label asp-for="@Model.PlanStepsResults[i].TestPassed">@Model.PlanStepsResults[i].StepName</label>
                              
-                             <input type="hidden" asp-for="@Model.PlanStepsResults[i].StepName" />                
+                <input type="hidden" asp-for="@Model.PlanStepsResults[i].StepName" />                
                          
-        </li>
-    }
-</ul>
+            </li>
+        }
+    </ul>
+    <input type="submit" name="submit" />
+</form>
 <a asp-action="DownloadPlanDetailJson" asp-route-id="@Model.PlanId" >Download as json</a>.
 
 <a asp-action="DownloadPlanDetailText" asp-route-id="@Model.PlanId" >Download as text file</a>.
