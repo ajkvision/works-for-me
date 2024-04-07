@@ -43,8 +43,9 @@ public class HomeController : Controller
     }
     
    [HttpPost]
-    public IActionResult SavePlanExcecution(int id)
+    public IActionResult SavePlanExcecution(int id, TestPlanExecutionViewModel testResultsModel)
     {
+        MockDataHelper.SaveTestExecution(id, testResultsModel);
         return RedirectToAction("TestPlans");
     }
     

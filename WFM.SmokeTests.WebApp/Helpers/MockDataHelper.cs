@@ -94,4 +94,9 @@ public static class MockDataHelper
         
         testPlansMockData.Add(newtestPlan);
     }
+
+    public static void SaveTestExecution(int id, TestPlanExecutionViewModel testResultsModel)
+    {
+        //TODO: 
+    }
 }
