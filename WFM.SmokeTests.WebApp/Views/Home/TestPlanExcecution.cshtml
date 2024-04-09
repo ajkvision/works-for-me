@@ -14,7 +14,7 @@
     <ul>
         @for (int i=0; i <  @Model.PlanStepsResults.Count; i++)
         {
-            <li>
+            <li style="list-style: none">
             
                 <input type="checkbox" asp-for="@Model.PlanStepsResults[i].TestPassed"  />
                 <label asp-for="@Model.PlanStepsResults[i].TestPassed">@Model.PlanStepsResults[i].StepName</label>
@@ -24,7 +24,7 @@
             </li>
         }
     </ul>
-    <input type="submit" name="submit" />
+    <input type="submit" name="submit" value="Save  test results">
 </form>
 <a asp-action="DownloadPlanDetailJson" asp-route-id="@Model.PlanId" >Download as json</a>.
 
