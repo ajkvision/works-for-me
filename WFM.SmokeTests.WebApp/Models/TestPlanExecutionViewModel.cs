@@ -6,6 +6,10 @@ public class TestPlanExecutionViewModel
     public string PlanCaption { get; set; }
     public string PlanDescription { get; set; }
     public List<PlanSetpResult> PlanStepsResults { get; set; }
+    
+    public string Notes { get; set; }
+    
+    public DateTime ExecutionTime { get; set; }
 }
 
 public class PlanSetpResult

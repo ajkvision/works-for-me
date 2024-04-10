@@ -45,6 +45,7 @@ public class HomeController : Controller
    [HttpPost]
     public IActionResult SavePlanExcecution(int id, TestPlanExecutionViewModel testResultsModel)
     {
+        testResultsModel.ExecutionTime = DateTime.Now;
         MockDataHelper.SaveTestExecution(id, testResultsModel);
         return RedirectToAction("TestPlans");
     }
