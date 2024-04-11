@@ -26,6 +26,8 @@
     </ul>
     <label asp-for="Notes" >Notes: </label>
     <input type="text" asp-for="Notes" placeholder="Enter additional comments here..."/>
+    <br/>
+    <hr/>
     <input type="submit" name="submit" value="Save  test results">
 </form>
 <a asp-action="DownloadPlanDetailJson" asp-route-id="@Model.PlanId" >Download as json</a>.
