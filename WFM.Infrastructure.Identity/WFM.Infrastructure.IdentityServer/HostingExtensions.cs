@@ -1,6 +1,6 @@
 using Serilog;
 
-namespace WFM.IdentityServer;
+namespace WFM.Infrastructure.IdentityServer;
 
 internal static class HostingExtensions
 {
@@ -20,11 +20,11 @@ internal static class HostingExtensions
 
         return builder.Build();
     }
-    
+
     public static WebApplication ConfigurePipeline(this WebApplication app)
-    { 
+    {
         app.UseSerilogRequestLogging();
-    
+
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
@@ -33,7 +33,7 @@ internal static class HostingExtensions
         // uncomment if you want to add a UI
         //app.UseStaticFiles();
         //app.UseRouting();
-            
+
         app.UseIdentityServer();
 
         // uncomment if you want to add a UI

@@ -1,12 +1,12 @@
 ﻿using Duende.IdentityServer.Models;
 
-namespace WFM.IdentityServer;
+namespace WFM.Infrastructure.IdentityServer;
 
 public static class Config
 {
     public static IEnumerable<IdentityResource> IdentityResources =>
         new IdentityResource[]
-        { 
+        {
             new IdentityResources.OpenId()
         };
 
@@ -15,6 +15,6 @@ public static class Config
             { };
 
     public static IEnumerable<Client> Clients =>
-        new Client[] 
+        new Client[]
             { };
 }
