@@ -6,6 +6,8 @@ public static class MockDataHelper
 {
     private static List<TestPlanViewModel> testPlansMockData;
 
+	private static List<TestPlanExecutionViewModel> testPlanExecutionHistory;
+
     
     static MockDataHelper()
     {
@@ -15,6 +17,7 @@ public static class MockDataHelper
     private static void InitMockData()
     {
         testPlansMockData = new List<TestPlanViewModel>();
+		testPlanExecutionHistory = new List<TestPlanExecutionViewModel>();
         
         var mockViewModel = new TestPlanViewModel();
         mockViewModel.PlanCaption = "My website smoke tests";
@@ -98,5 +101,6 @@ public static class MockDataHelper
     public static void SaveTestExecution(int id, TestPlanExecutionViewModel testResultsModel)
     {
         //TODO: 
+		testPlanExecutionHistory.Add(testResultsModel);
     }
 }
