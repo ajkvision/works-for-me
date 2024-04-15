@@ -20,6 +20,7 @@ public static class Config
             new Client()
             {
                 ClientId = "wfmTestApiClient",
+				
 
                 // no interactive user, use the clientid/secret for authentication
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -31,7 +32,7 @@ public static class Config
                 },
 
                 // scopes that client has access to
-                AllowedScopes = { "apiWFM" }
+                AllowedScopes = { "apiWFM"}
             }
         };
 }

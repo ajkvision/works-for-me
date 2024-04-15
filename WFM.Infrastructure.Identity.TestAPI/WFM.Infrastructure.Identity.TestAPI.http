@@ -1,0 +1,6 @@
+@WFM.Infrastructure.Identity.TestAPI_HostAddress = http://localhost:5240
+
+GET {{WFM.Infrastructure.Identity.TestAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
