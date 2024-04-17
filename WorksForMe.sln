@@ -4,6 +4,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.SmokeTests.WebApp", "WF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.Infrastructure.IdentityServer", "WFM.Infrastructure.Identity\WFM.Infrastructure.IdentityServer\WFM.Infrastructure.IdentityServer.csproj", "{0548DE4F-D346-4DFA-A09A-801578D7E02D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WFM.Infrastructure.Identity", "WFM.Infrastructure.Identity", "{7C5862A0-4811-4946-808D-67DA2129245B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.Infrastructure.Identity.TestAPI", "WFM.Infrastructure.Identity\WFM.Infrastructure.Identity.TestAPI\WFM.Infrastructure.Identity.TestAPI.csproj", "{8F95A832-B68F-4667-9293-9F9668AF81C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.SmokeTests.Application", "WFM.SmokeTests.Application\WFM.SmokeTests.Application.csproj", "{055CB8EA-D29A-4DB1-9BEC-0A0566F551E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.SmokeTests.Domain", "WFM.SmokeTests.Domain\WFM.SmokeTests.Domain.csproj", "{29A5AE76-21AD-496C-80C6-760CAE53F982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.SmokeTests.Infrastructure", "WFM.SmokeTests.Infrastructure\WFM.SmokeTests.Infrastructure.csproj", "{35C2170E-51E0-4209-9475-DD0F6968E7DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +28,25 @@ Global
 		{0548DE4F-D346-4DFA-A09A-801578D7E02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0548DE4F-D346-4DFA-A09A-801578D7E02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0548DE4F-D346-4DFA-A09A-801578D7E02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F95A832-B68F-4667-9293-9F9668AF81C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F95A832-B68F-4667-9293-9F9668AF81C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F95A832-B68F-4667-9293-9F9668AF81C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F95A832-B68F-4667-9293-9F9668AF81C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055CB8EA-D29A-4DB1-9BEC-0A0566F551E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055CB8EA-D29A-4DB1-9BEC-0A0566F551E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055CB8EA-D29A-4DB1-9BEC-0A0566F551E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055CB8EA-D29A-4DB1-9BEC-0A0566F551E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A5AE76-21AD-496C-80C6-760CAE53F982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A5AE76-21AD-496C-80C6-760CAE53F982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A5AE76-21AD-496C-80C6-760CAE53F982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A5AE76-21AD-496C-80C6-760CAE53F982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C2170E-51E0-4209-9475-DD0F6968E7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C2170E-51E0-4209-9475-DD0F6968E7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C2170E-51E0-4209-9475-DD0F6968E7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C2170E-51E0-4209-9475-DD0F6968E7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0548DE4F-D346-4DFA-A09A-801578D7E02D} = {7C5862A0-4811-4946-808D-67DA2129245B}
+		{8F95A832-B68F-4667-9293-9F9668AF81C3} = {7C5862A0-4811-4946-808D-67DA2129245B}
 	EndGlobalSection
 EndGlobal
