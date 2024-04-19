@@ -17,5 +17,28 @@ else
 }
 
 
+Console.WriteLine("End disco");
+
+var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+{
+    Address = disco.TokenEndpoint,
+    ClientId = "wfmTestApiClient",
+    ClientSecret = "secret",
+    Scope = "apiWFM"
+});
+
+if (tokenResponse.IsError)
+{
+    Console.WriteLine(tokenResponse.Error);
+    Console.WriteLine(tokenResponse.ErrorDescription);
+    return;
+}
+else
+{
+    Console.WriteLine("token ok");
+}
+
+Console.WriteLine(tokenResponse.AccessToken);
+
 Console.WriteLine("End");
 Console.ReadLine();
