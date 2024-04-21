@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.SmokeTests.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.Infrastructure.Identity.TestClient", "WFM.Infrastructure.Identity\WFM.Infrastructure.Identity.TestClient\WFM.Infrastructure.Identity.TestClient.csproj", "{774C3F4C-8E6D-470D-9206-DA64077B10E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFM.Infrastructure.Identity.TestWebClientRazor", "WFM.Infrastructure.Identity\WFM.Infrastructure.Identity.TestWebClientRazor\WFM.Infrastructure.Identity.TestWebClientRazor.csproj", "{0EF16070-DDBB-4F22-A7AE-72678F8E911A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,10 +52,15 @@ Global
 		{774C3F4C-8E6D-470D-9206-DA64077B10E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{774C3F4C-8E6D-470D-9206-DA64077B10E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{774C3F4C-8E6D-470D-9206-DA64077B10E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF16070-DDBB-4F22-A7AE-72678F8E911A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF16070-DDBB-4F22-A7AE-72678F8E911A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF16070-DDBB-4F22-A7AE-72678F8E911A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF16070-DDBB-4F22-A7AE-72678F8E911A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0548DE4F-D346-4DFA-A09A-801578D7E02D} = {7C5862A0-4811-4946-808D-67DA2129245B}
 		{8F95A832-B68F-4667-9293-9F9668AF81C3} = {7C5862A0-4811-4946-808D-67DA2129245B}
 		{774C3F4C-8E6D-470D-9206-DA64077B10E9} = {7C5862A0-4811-4946-808D-67DA2129245B}
+		{0EF16070-DDBB-4F22-A7AE-72678F8E911A} = {7C5862A0-4811-4946-808D-67DA2129245B}
 	EndGlobalSection
 EndGlobal
