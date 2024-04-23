@@ -22,6 +22,7 @@ builder.Services.AddAuthentication(options =>
         options.Scope.Add("profile");
 
         options.MapInboundClaims = false; // Don't rename claim types
+        options.GetClaimsFromUserInfoEndpoint = true;
 
         options.SaveTokens = true;
     });
