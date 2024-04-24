@@ -25,7 +25,9 @@
         }
     </ul>
     <label asp-for="Notes" >Notes: </label>
-    <input type="text" asp-for="Notes" placeholder="Enter additional comments here..."/>
+    <br/>
+    @* <input type="text" asp-for="Notes" placeholder="Enter additional comments here..."/> *@
+    <textarea asp-for="Notes"  placeholder="Enter additional comments here..." ></textarea>
     <br/>
     <hr/>
     <input type="submit" name="submit" value="Save  test results">
