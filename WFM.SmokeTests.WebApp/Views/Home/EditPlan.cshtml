@@ -1,0 +1,21 @@
+@using WFM.SmokeTests.Domain.Entities
+@model TestPlanViewModel
+
+@{
+    ViewBag.Title = @Model.PlanCaption;
+    Layout = "_Layout";
+}
+
+
+<h2>@Model.PlanCaption</h2>
+<span>@Model.PlanDescription</span>
+<span>Steps to execute</span>
+<ul>
+    <form>
+    @foreach (var testStep in @Model.PlanSteps)
+    {
+        <li><input asp-for="@testStep" value="@testStep"/> </li>
+    }
+    <button type="submit">Save</button>
+    </form>
+</ul>
