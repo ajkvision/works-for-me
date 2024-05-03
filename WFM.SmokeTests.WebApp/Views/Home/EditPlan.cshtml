@@ -14,7 +14,10 @@
     <form>
     @foreach (var testStep in @Model.PlanSteps)
     {
-        <li><input asp-for="@testStep" value="@testStep"/> </li>
+        <li>
+            <input asp-for="@testStep" value="@testStep"/>
+            <button> Remove step</button>
+        </li>
     }
     <button>Add step</button>
     <button type="submit">Save</button>
