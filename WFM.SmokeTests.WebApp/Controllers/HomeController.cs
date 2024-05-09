@@ -28,6 +28,12 @@ public class HomeController : Controller
         var mockViewModel = MockDataHelper.GetTestPlansList();
         return View(mockViewModel);
     }
+    
+    public IActionResult TestReports()
+    {
+        var mockViewModel = MockDataHelper.GetTestPlansList();
+        return View(mockViewModel);
+    }
 
     
     public IActionResult PlanDetail(int id)
