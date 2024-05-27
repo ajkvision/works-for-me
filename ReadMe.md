@@ -17,6 +17,11 @@ Simple application that allows and execute smote tests  for your aplikaction.
 
 ### Installation
 
+### Integrations
+* TODOIST 
+* JIRA
+* CONFLUENCE
+
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * ReadMe.MD template taken form this project https://github.com/othneildrew/Best-README-Template
