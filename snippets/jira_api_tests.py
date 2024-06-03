@@ -8,6 +8,15 @@ jira = Jira(jira_instance, username="my@email.com", password="API-TOKEN-HERE", c
 test_jira_key = 'TST-1'
 jira_issue = jira.issue(test_jira_key)
 
+#show basic issue info
+summary = jira_issue.fields.summary    
+reporter = jira_issue.fields.reporter
+
+
+# attaching test reports - PoC
+jira.add_attachment(issue=test_jira_key, attachment='/some/path/report_resulst.pdf')
+
+
 confluence = Confluence(
     url='https://your-domain.atlassian.net',
     username=atlassian_username,
