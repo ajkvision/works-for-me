@@ -23,4 +23,8 @@ confluence = Confluence(
     password=atlassian_api_token,
     cloud=True)
 
+# Create page from scratch - 
+title = 'test report'
+confluence.create_page(space, title, body, parent_id=None, type='page', representation='storage', editor='v2', full_width=False)
+
 print(jira.api_version)
