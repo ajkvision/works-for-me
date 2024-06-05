@@ -11,6 +11,7 @@ jira_issue = jira.issue(test_jira_key)
 #show basic issue info
 summary = jira_issue.fields.summary    
 reporter = jira_issue.fields.reporter
+worklogs = jira_issue.fields.worklogs
 
 
 # attaching test reports - PoC
