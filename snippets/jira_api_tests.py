@@ -5,6 +5,8 @@ jira_instance = "https://my.atlassian.net"
 
 jira = Jira(jira_instance, username="my@email.com", password="API-TOKEN-HERE", cloud=True)
 
+print(jira.api_version)
+
 test_jira_key = 'TST-1'
 jira_issue = jira.issue(test_jira_key)
 
@@ -27,5 +29,7 @@ confluence = Confluence(
 # Create page from scratch - 
 title = 'test report'
 confluence.create_page(space, title, body, parent_id=None, type='page', representation='storage', editor='v2', full_width=False)
+# Export page example 
+confluence.export_page(page_id)
 
-print(jira.api_version)
+
