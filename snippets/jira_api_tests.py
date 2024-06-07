@@ -19,6 +19,10 @@ worklogs = jira_issue.fields.worklogs
 # attaching test reports - PoC
 jira.add_attachment(issue=test_jira_key, attachment='/some/path/report_resulst.pdf')
 
+# adding a cooment about repost resulst 
+
+comment = jira.add_comment(test_jira_key, 'Test results: FAIL. See more details in attachments') 
+
 
 confluence = Confluence(
     url='https://your-domain.atlassian.net',
